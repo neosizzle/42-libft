@@ -1,33 +1,25 @@
 #include "libft.h"
 
-int	found(const char *big, const char *little, size_t len)
-{
-	while (len && *little)
-	{
-		if (*big == *little)
-		{
-			big++;
-			little++;
-			len--;
-		}
-		else
-			return (0);
-	}
-	if (len < 0)
-		return (0);
-	return (1);
-}
-
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	if (!*little)
-		return ((char *)big);
-	while (*big && len)
+	size_t	i;
+	size_t	c;
+	size_t	res_len;
+	char	*hay;
+
+	i = 0;
+	hay = (char *)big;
+	res_len = ft_strlen(little);
+	if (res_len == 0 || big == little)
+		return (hay);
+	while (hay[i] && i < len)
 	{
-		if (found(big, little, len))
-			return ((char *)big);
-		big++;
-		len--;
+		c = 0;
+		while (hay[i + c] && little[c] && hay[i + c] == little[c] && i + c < len)
+			c++;
+		if (c == res_len)
+			return (hay + i);
+		i++;
 	}
 	return (0);
 }
