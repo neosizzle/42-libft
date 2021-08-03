@@ -33,9 +33,9 @@ char	**ft_split(char const *s, char c)
 	char	**res;
 	int		i;
 
-	if (!s || !c)
+	if (!s)
 		return (0);
-	res = (char **)malloc((sizeof(char *) * get_tw((char *)s, c)) + 1024);
+	res = (char **)malloc((sizeof(char *) * (get_tw((char *)s, c)) + 1));
 	if (!res)
 		return (0);
 	i = 0;
