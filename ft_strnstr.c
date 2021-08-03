@@ -2,7 +2,7 @@
 
 int	found(const char *big, const char *little, size_t len)
 {
-	while (len && *big && *little)
+	while (len && *little)
 	{
 		if (*big == *little)
 		{
