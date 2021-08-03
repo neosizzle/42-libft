@@ -15,7 +15,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	while (hay[i] && i < len)
 	{
 		c = 0;
-		while (hay[i + c] && little[c] && hay[i + c] == little[c] && i + c < len)
+		while (hay[i + c] && little[c]
+				&& hay[i + c] == little[c] && i + c < len)
 			c++;
 		if (c == res_len)
 			return (hay + i);

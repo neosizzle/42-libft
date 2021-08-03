@@ -4,7 +4,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*head;
 	t_list	*curr;
 
-	if (!lst || !f )
+	if (!lst || !f)
 		return (0);
 	curr = ft_lstnew(f(lst->content));
 	if (!curr)
