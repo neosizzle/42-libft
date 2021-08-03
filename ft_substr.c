@@ -12,7 +12,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	while (start)
 	{
 		if (!*s)
-			return ("\0");
+			return (ft_strdup("\0"));
 		s++;
 		start--;
 	}
