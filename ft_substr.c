@@ -7,7 +7,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	int		i;
 
 	res = (char *)malloc(len + 1);
-	if (!res || start >= ft_strlen(s))
+	if (!res || start >= ft_strlen(s) || len > ft_strlen(s))
 		return (0);
 	while (start)
 	{
