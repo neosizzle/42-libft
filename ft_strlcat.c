@@ -14,6 +14,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		dstptr++;
 	while (src[srcptr])
 		srcptr++;
+	if (size < 0)
+		size = srcptr + dstptr;
 	diff = (size - (int)dstptr - 1);
 	if (diff >= 0)
 	{
