@@ -2,25 +2,25 @@
 
 int	found(const char *big, const char *little, size_t len)
 {
-	while (len && *little)
+	while (len && *big && *little)
 	{
-		if (*little == *big)
+		if (*big == *little)
 		{
-			little++;
 			big++;
+			little++;
+			len--;
 		}
 		else
 			return (0);
-		len--;
 	}
-	if (!len)
+	if (len < 0)
 		return (0);
 	return (1);
 }
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	if (!little)
+	if (!*little)
 		return ((char *)big);
 	while (*big && len)
 	{
