@@ -1,14 +1,14 @@
 #include "libft.h"
 #include <stdlib.h>
 
-void	ft_strcpy(char *dst, char *begin, char *end)
+static void	ft_strcpy(char *dst, char *begin, char *end)
 {
 	while (begin < end)
 		*(dst++) = *(begin++);
 	*dst = 0;
 }
 
-int	get_tw(char *s, char c)
+static int	get_tw(char *s, char c)
 {
 	int		res;
 
