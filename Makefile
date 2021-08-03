@@ -29,7 +29,7 @@ $(NAME) : ${OBJS} ${INCLUDE}
 	${RANLIB} ${NAME}
 
 .c.o :
-	${CC} ${CCFLAGS} -I ${INCLUDE} -c $< -o ${<:.c=.o}
+	${CC} ${CCFLAGS} -I . -c $< -o ${<:.c=.o}
 
 clean :
 	rm -f ${OBJS} ${BONUS_OBJS}
