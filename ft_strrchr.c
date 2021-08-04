@@ -8,6 +8,8 @@ char	*ft_strrchr(const char *s, int c)
 	i = 0;
 	str = (unsigned char *)s;
 	i = ft_strlen((char *)s);
+	if (c > 255)
+		c -= 256;
 	if (c > 127)
 		return (0);
 	while (i >= 0)
