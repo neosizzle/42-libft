@@ -1,6 +1,16 @@
 #include "libft.h"
 #include <stdlib.h>
 
+static	int	validate(char const *s, unsigned int start, char *res)
+{
+	if (start > ft_strlen(s))
+	{
+		free (res);
+		return (0);
+	}
+	return (1);
+}
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*res;
@@ -9,11 +19,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	res = (char *)malloc(ft_strlen(s) + 1);
 	if (!res)
 		return (0);
-	if (start > ft_strlen(s))
-	{
-		free(res);
+	if (!validate(s, start, len))
 		return (ft_strdup("\0"));
-	}
 	while (start--)
 	{
 		if (!(*s++))
