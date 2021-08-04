@@ -14,15 +14,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		free(res);
 		return (ft_strdup("\0"));
 	}
-	while (start)
+	while (start--)
 	{
-		if (!*s)
+		if (!(*s++))
 		{
 			free(res);
 			return (ft_strdup("\0"));
 		}
-		s++;
-		start--;
 	}
 	i = 0;
 	while (len && *s)
