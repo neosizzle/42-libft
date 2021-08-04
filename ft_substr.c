@@ -10,11 +10,17 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!res)
 		return (0);
 	if (start > ft_strlen(s))
-		return (ft_strdup("\0\0"));
+	{
+		free(res);
+		return (ft_strdup("\0"));
+	}
 	while (start)
 	{
 		if (!*s)
-			return (ft_strdup("\0\0"));
+		{
+			free(res);
+			return (ft_strdup("\0"));
+		}
 		s++;
 		start--;
 	}
